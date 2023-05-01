@@ -1,0 +1,68 @@
+
+<p-dialog [(visible)]="viewDialog" [style]="{width: '70vw'}" header="{{'declarationTvaTabPan' | translate}}" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="{{'{{'declarationTvaTabPan' | translate}}' | translate}}">
+                <div class="grid">
+                    <div class="field col-12 md:col-3">
+                        <label for="1">{{'Date declaration' | translate}}</label>
+                        <p-calendar id="1" [disabled]="true"  [showTime]="true" [showSeconds]="false" placeholder="{{'Date declaration' | translate}}"  [(ngModel)]="item.dateDeclaration" dateFormat="{{dateFormat}}"></p-calendar>
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="2">{{'Trimistre' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="2" [disabled]="true" placeholder="{{'Trimistre' | translate}}" [(ngModel)]="item.trimistre"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="3">{{'Annee' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="3" [disabled]="true" placeholder="{{'Annee' | translate}}" [(ngModel)]="item.annee"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="4">{{'Societe' | translate}}</label>
+                        <p-dropdown [options]="societes" [(ngModel)]="item.societe" id="4" [disabled]="true" optionLabel="ice" placeholder="{{'Societe' | translate}}"></p-dropdown>
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="5">{{'Total tva collecte' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="5" [disabled]="true" placeholder="{{'Total tva collecte' | translate}}" [(ngModel)]="item.totalTvaCollecte"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="6">{{'Total tva due' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="6" [disabled]="true" placeholder="{{'Total tva due' | translate}}" [(ngModel)]="item.totalTvaDue"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="7">{{'Difference tva' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="7" [disabled]="true" placeholder="{{'Difference tva' | translate}}" [(ngModel)]="item.differenceTva"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="8">{{'Taux retard tva' | translate}}</label>
+                        <p-dropdown [options]="tauxRetardTvas" [(ngModel)]="item.tauxRetardTva" id="8" [disabled]="true" optionLabel="id" placeholder="{{'Taux retard tva' | translate}}"></p-dropdown>
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="9">{{'Montant tva' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="9" [disabled]="true" placeholder="{{'Montant tva' | translate}}" [(ngModel)]="item.montantTva"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="10">{{'Comptable traitant' | translate}}</label>
+                        <p-dropdown [options]="comptableTraitants" [(ngModel)]="item.comptableTraitant" id="10" [disabled]="true" optionLabel="id" placeholder="{{'Comptable traitant' | translate}}"></p-dropdown>
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="11">{{'Comptable validateur' | translate}}</label>
+                        <p-dropdown [options]="comptableValidateurs" [(ngModel)]="item.comptableValidateur" id="11" [disabled]="true" optionLabel="id" placeholder="{{'Comptable validateur' | translate}}"></p-dropdown>
+                    </div>
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer" >
+        <div class="grid-footer">
+            <div>
+                <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideViewDialog()"></button>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>
+
+
+
